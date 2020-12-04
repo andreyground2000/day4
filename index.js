@@ -77,13 +77,13 @@ console.log(myUnshift([56, 56, 67, 44,"hy"], "hrkko", "sd"));
 //shift
 
 function myShift(array) {
-    for (let key in array) {
-        if (key == "0") {
-            delete array[key];
-        }
-      }
-      return array;
+    let newArr = [...array];
+    for (let i = 0, j=i+1 ; i<newArr.length; i++, j++) {
+        array[i] = newArr[j];
+    }
+    array.length = array.length -1;
+    return array;
 
 }
 
-console.log(myShift([67, 87, 3456]));
+console.log(myShift([67, 87, 3456, 8998, 8998,"dkhdk"]));
